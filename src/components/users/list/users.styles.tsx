@@ -4,13 +4,15 @@ const UsersListWrapper = styled.section`
   width: 100%;
   padding: 8em 5%;
   margin: 0 auto;
-  overflow-x: scroll;
-  position: relative;
 
   @media screen and (min-width: 40em) {
     width: 60%;
     padding: 10% 5%;
   }
+`
+
+const TableContainer = styled.div`
+overflow-x: auto;
 `
 
 const UsersListTable = styled.table`
@@ -28,7 +30,7 @@ const UsersListTable = styled.table`
 
 const Th = styled.th`
   background-color: #FFFFFF;
-  padding: 0.5em 1.5em;
+  padding: 0.8em 2em;
   color: #808080;
   border-bottom: 1.2px solid #EEEEEE;
   font-size: 70%;
@@ -46,7 +48,7 @@ interface TdProp {
 
 const Td = styled.td<TdProp>`
   background-color: #FFFFFF;
-  padding: 0.75em 1.3em;
+  padding: 1em 1.5em;
   text-align: ${({ noTalign }) => noTalign ? "center" : "left"};
   border-bottom: 1.2px solid #EEEEEE;
   color: #202020;
@@ -72,4 +74,5 @@ const ArrowDown = styled.img.attrs({
 export {
   UsersListTable, Th,
   Td, ArrowDown, UsersListWrapper,
+  TableContainer,
 }

@@ -6,6 +6,7 @@ import toast from 'react-hot-toast'
 import {
   UsersListTable, Th,
   Td, ArrowDown, UsersListWrapper,
+  TableContainer,
 } from "./users.styles"
 import { FlexRow, PlusIcon, DeleteIcon, } from "../../shared/index.styles"
 import { H2 } from "../../typography"
@@ -18,7 +19,6 @@ import UpdateUserPageContents from "../patch"
 
 const UsersList = ():JSX.Element => {
   const navigate = useNavigate()
-  // { users }: { users: UserInterface[]}
   const [users, setUsers] = useState<Array<UserInterface>>([])
   const [togglePatch, setToggle] = useState<boolean>(false)
   const [selectedUser, setSelectedUser] = useState<UserInterface | any>({})
@@ -84,31 +84,33 @@ const UsersList = ():JSX.Element => {
           <Button flexD><PlusIcon /> Create User</Button>
         </Link>
       </FlexRow>
-      <UsersListTable>
-        <tr>
-          <Th>NAME</Th>
-          <Th>EMAIL <ArrowDown /></Th>
-          <Th>ROLE <ArrowDown /></Th>
-          <Th>ACTIONS</Th>
-        </tr>
-        {allUsers && allUsers.map((user: UserInterface) => {
-          const { id, fullname, email, role } = user;
-          return (
-          <tr key={id} onClick={(e) => {
-            e.stopPropagation()
-            setToggle(!togglePatch)
-            setSelectedUser(user)
-            }}>
-            <Td>{fullname}</Td>
-            <Td>{email}</Td>
-            <Td>{role}</Td>
-            <Td noTalign><DeleteIcon onClick={(e) => {
-              e.stopPropagation()
-              id && deleteUser(id)
-              }} /></Td>
+      <TableContainer>
+        <UsersListTable>
+          <tr>
+            <Th>NAME</Th>
+            <Th>EMAIL <ArrowDown /></Th>
+            <Th>ROLE <ArrowDown /></Th>
+            <Th>ACTIONS</Th>
           </tr>
-        )})}
-      </UsersListTable>
+          {allUsers && allUsers.map((user: UserInterface) => {
+            const { id, fullname, email, role } = user;
+            return (
+            <tr key={id} onClick={(e) => {
+              e.stopPropagation()
+              setToggle(!togglePatch)
+              setSelectedUser(user)
+              }}>
+              <Td>{fullname}</Td>
+              <Td>{email}</Td>
+              <Td>{role}</Td>
+              <Td noTalign><DeleteIcon onClick={(e) => {
+                e.stopPropagation()
+                id && deleteUser(id)
+                }} /></Td>
+            </tr>
+          )})}
+        </UsersListTable>
+      </TableContainer>
     </UsersListWrapper>
   )
 }
