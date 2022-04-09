@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# archy-test-ui
+Archy-test-ui is a is a basic test project to demonstrate basic frontend react knowledge and API intergation.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Preview
+[Click here](https://venerable-elf-f1fe0a.netlify.app/) to view the app on Netlify and 
+[here](https://hidden-retreat-03498.herokuapp.com/) to view the API on heroku.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+The app has all 4 CRUD functionalities implemented;
 
-### `npm start`
+- A client user can:
+    - view the list of available users
+    - click on each row to edit / update the user data
+    - delete a user data
+    - create new user data
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies
+### Frontend
+    - [React js](https://reactjs.org/)
+    - [Typescript](https://www.typescriptlang.org/docs/)
+    - [Styled-components](https://styled-components.com/)
+    - [Styled-system](https://styled-system.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Backend / API
+The application API was developed with [NodeJs](http://nodejs.org/), [Express](http://expressjs.com/) was used for routing and [Mysql2](https://www.mysql.com/)  for database management, The ApI is developed with 
+[Typescript](https://www.typescriptlang.org/docs) and [Sequelize](https://sequelize.org/).
 
-### `npm test`
+## Installation(server)
+Follow the steps below to setup a local development environment. First ensure you have [Create-react-app](https://reactjs.org/) and associated build packs installed, and a version of [Node.js](http://nodejs.org/) equal or greater than v6.10.0 .
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository from a terminal; git clone `https://github.com/codecell/test_server.git`.
+2. Navigate to the project directory `cd test_sercer`
+3. Rename `.env.sample` to `.env` and add the required DATABASE settings.
+4. Install project dependencies `npm install`
+5. Start the express server `npm run dev` to serve the project.
 
-### `npm run build`
+## Installation(UI)
+Follow the steps below to setup a local development environment for the frontend. First ensure you have [Mysql2](https://www.mysql.com/) installed, and a version of [Node.js](http://nodejs.org/) equal or greater than v6.10.0 .
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository from a terminal; git clone `https://github.com/codecell/archy-test-ui.git`.
+2. Navigate to the project directory `cd archy-test-ui`
+3. Install project dependencies `yarn install`
+4. Start the express server `yarn start` to serve the user interface.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Summary
+View full API documentation [here](https://hidden-retreat-03498.herokuapp.com/api-docs/)
 
-### `npm run eject`
+### Users
+EndPoint                      |   Functionality
+------------------------------|------------------------
+GET api/users/all             |   Allows a client to view all users.
+POST api/users/new            |   Allows a client to create a user.
+PATCH api/users/:id?          |   Allows a client to edit/update a specific user.
+DELETE api/users/:id?         |   Allows a client to delete a specific user
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Limitations
+Currently, unit tests have not been written for any of the frontend or backend yet, but i hope to add those soon.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Licence
+MIT
