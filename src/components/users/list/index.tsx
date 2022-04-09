@@ -76,7 +76,8 @@ const UsersList = ():JSX.Element => {
       <UpdateUserPageContents 
         userdata={selectedUser} 
         refresh={async() => await getUsers()}
-        setToggle={() => setToggle(!togglePatch)} />}
+        setToggle={() => setToggle(!togglePatch)} />
+      }
       <FlexRow jcsb>
         <H2>Users</H2>
         <Link to="/users/create" style={{color: 'transparent', textDecoration: 'none'}}>
