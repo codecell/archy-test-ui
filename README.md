@@ -33,7 +33,7 @@ Follow the steps below to setup a local development environment. First ensure yo
 2. Navigate to the project directory `cd test_sercer`
 3. Rename `.env.sample` to `.env` and add the required DATABASE settings.
 4. Install project dependencies `npm install`
-5. Start the express server `npm run dev` to serve the project.
+5. To run migrations and start the express server, navigate to src/index.ts and `un-comment` the `await sequelizeInstance.sync` call then run `npm run dev` to serve the project.
 
 ## Installation(UI)
 Follow the steps below to setup a local development environment for the frontend. First ensure you have [Mysql2](https://www.mysql.com/) installed, and a version of [Node.js](http://nodejs.org/) equal or greater than v6.10.0 .
