@@ -17,17 +17,17 @@ The app has all 4 CRUD functionalities implemented;
 
 ## Technologies
 ### Frontend
-    - [React js](https://reactjs.org/)
-    - [Typescript](https://www.typescriptlang.org/docs/)
-    - [Styled-components](https://styled-components.com/)
-    - [Styled-system](https://styled-system.com/)
+  - [React js](https://reactjs.org/)
+  - [Typescript](https://www.typescriptlang.org/docs/)
+  - [Styled-components](https://styled-components.com/)
+  - [Styled-system](https://styled-system.com/)
 
 ### Backend / API
-The application API was developed with [NodeJs](http://nodejs.org/), [Express](http://expressjs.com/) was used for routing and [Mysql2](https://www.mysql.com/)  for database management, The ApI is developed with 
-[Typescript](https://www.typescriptlang.org/docs) and [Sequelize](https://sequelize.org/).
+The application API was developed with [NodeJs](http://nodejs.org/), [Express](http://expressjs.com/) was used for routing and [Mysql2](https://www.mysql.com/)  for database management, The ApI is also developed with 
+[Typescript](https://www.typescriptlang.org/docs) and [Sequelize](https://sequelize.org/) was used as the ORM.
 
 ## Installation(server)
-Follow the steps below to setup a local development environment. First ensure you have [Create-react-app](https://reactjs.org/) and associated build packs installed, and a version of [Node.js](http://nodejs.org/) equal or greater than v6.10.0 .
+Follow the steps below to setup a local development environment for the frontend. First ensure you have [Mysql2](https://www.mysql.com/) installed, and a version of [Node.js](http://nodejs.org/) equal or greater than v6.10.0 .
 
 1. Clone the repository from a terminal; git clone `https://github.com/codecell/test_server.git`.
 2. Navigate to the project directory `cd test_sercer`
@@ -35,8 +35,8 @@ Follow the steps below to setup a local development environment. First ensure yo
 4. Install project dependencies `npm install`
 5. To run migrations and start the express server, navigate to src/index.ts and `un-comment` the `await sequelizeInstance.sync` call then run `npm run dev` to serve the project.
 
-## Installation(UI)
-Follow the steps below to setup a local development environment for the frontend. First ensure you have [Mysql2](https://www.mysql.com/) installed, and a version of [Node.js](http://nodejs.org/) equal or greater than v6.10.0 .
+## Installation(Frontend)
+Follow the steps below to setup a local development environment. First ensure you have [Create-react-app](https://reactjs.org/) and associated build packs installed, and a version of [Node.js](http://nodejs.org/) equal or greater than v6.10.0 .
 
 1. Clone the repository from a terminal; git clone `https://github.com/codecell/archy-test-ui.git`.
 2. Navigate to the project directory `cd archy-test-ui`
